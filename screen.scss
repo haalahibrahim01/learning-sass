@@ -1,9 +1,81 @@
-.box{
-    font-family: Helvetica, sans-serif;
-    h3{
-        color: aqua;
-    }
+
+@import 'mixins';
+// I added mixin at the top because I have to start using mixin
+// from the header file itself.
+$primarycolor:orange;
+// change this baseline color to make changes in the entire page.
+
+html {
+font-size: 1em;
+@include bp-babyBear{
+    font-size: 0.8em;
+    // This sets a smaller baseline font size for small screens.
 }
+@include bp-papaBear{
+    line-height:1.4em;
+    // This sets a larger baseline font size for large screens.
+}
+// it is easier to set responsive font-size with mixins as done here. 
+// The media queries for these are written in the mixin file
+// with the bear labels.
+line-height: 1.35;
+}
+
+body {
+    font-family: Helvetica, sans-serif; 
+}
+
+a {
+color:$primarycolor;
+}
+
+@import 'header';
+
+.btn-a {
+    display:inline-block;
+    padding:15px;
+    margin-right: 10px;
+    border: 1px solid $primarycolor;
+    border-radius: 7px;
+    font-size: 80%;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+
+
+
+.btn-b {
+    @extend.btn-a;
+    // background-color: lighten($primarycolor, 45%);
+    @include verticalGradient(white, lighten($primarycolor, 30%));
+}
+
+.box{
+    background-color: #DDD;
+    width: (500px/2);
+    // width: (300px*2);
+    // width: 100+200;
+    height: 150px;
+}
+
+.group:before,
+.group:after {
+	content: "";
+	display: table;
+}
+
+.row:after,
+.group:after {
+	clear: both;
+}
+
+.row,
+.group {
+	zoom: 1;
+}
+
+
 
 
 

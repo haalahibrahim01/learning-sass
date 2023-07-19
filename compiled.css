@@ -1,8 +1,101 @@
-.box {
+html {
+  font-size: 1em;
+  line-height: 1.35;
+}
+@media only screen and (max-width: 480px) {
+  html {
+    font-size: 0.8em;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  html {
+    line-height: 1.4em;
+  }
+}
+
+body {
   font-family: Helvetica, sans-serif;
 }
-.box h3 {
-  color: aqua;
+
+a {
+  color: orange;
+}
+
+.site-header nav ul {
+  padding: 0;
+  margin: 0;
+}
+.site-header nav li {
+  list-style: none;
+  float: left;
+  margin-right: 10px;
+}
+@media only screen and (max-width: 480px) {
+  .site-header nav li {
+    float: none;
+    margin-right: 0;
+    margin-bottom: 2px;
+  }
+}
+@media only screen and (min-width: 1100px) {
+  .site-header nav li {
+    margin-right: 50px;
+  }
+}
+.site-header nav a {
+  display: block;
+  padding: 10px;
+  background-color: orange;
+  color: #fff;
+  text-decoration: none;
+}
+
+.btn-a, .btn-b {
+  display: inline-block;
+  padding: 15px;
+  margin-right: 10px;
+  border: 1px solid orange;
+  border-radius: 7px;
+  font-size: 80%;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.btn-b {
+  background-color: #ffdb99; /* Fallback Color */
+  background-image: -webkit-gradient(linear, left top, left bottom, from(white), to(#ffdb99)); /* Saf4+, Chrome */
+  background-image: -webkit-linear-gradient(top, white, #ffdb99); /* Chrome 10+, Saf5.1+, iOS 5+ */
+  background-image: -moz-linear-gradient(top, white, #ffdb99); /* FF3.6 */
+  background-image: -ms-linear-gradient(top, white, #ffdb99); /* IE10 */
+  background-image: -o-linear-gradient(top, white, #ffdb99); /* Opera 11.10+ */
+  background-image: linear-gradient(to bottom, white, #ffdb99);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr="white", EndColorStr="#ffdb99");
+}
+
+.box {
+  background-color: #DDD;
+  width: 250px;
+  height: 150px;
+}
+
+.group:before, .site-header nav ul:before,
+.group:after,
+.site-header nav ul:after {
+  content: "";
+  display: table;
+}
+
+.row:after,
+.group:after,
+.site-header nav ul:after {
+  clear: both;
+}
+
+.row,
+.group,
+.site-header nav ul {
+  zoom: 1;
 }
 
 /*# sourceMappingURL=compiled.css.map */
